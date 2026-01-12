@@ -9,16 +9,13 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
-public class Score {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id", nullable = false)
-  private Long id;
+public class Grade  extends AuditableEntity{
+
 
   @OneToOne
-  @JoinColumn(name ="course_id") //uni -directional
+  @JoinColumn(name = "course_id") // uni -directional
   private Course course;
 
-  @Column(name = "score", nullable = false)
-  private Long score;
+  @Enumerated(EnumType.STRING)
+  private dev.vt.persistence.model.enums.Grade grade;
 }

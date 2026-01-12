@@ -1,4 +1,4 @@
-package dev.vt.persistence;
+package dev.vt.persistence.model;
 
 import jakarta.persistence.Embeddable;
 

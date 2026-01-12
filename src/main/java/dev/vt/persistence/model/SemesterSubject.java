@@ -7,27 +7,23 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 
-import java.time.LocalDate;
-
 @Entity
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
-public class Assignment extends AuditableEntity{
+public class SemesterSubject extends AuditableEntity {
 
-  private String title;
-  private String description;
 
-  private LocalDate dueDate;
-  private int maxMarks;
 
   @Enumerated(EnumType.STRING)
   private Subject subject;
 
-/*  @ManyToOne
-  private Course course;
+  private int credits;
+  private boolean mandatory;
 
-  @ManyToOne
-  private Semester semester;*/
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "semester_id", nullable = false)
+  private Semester semester;
+
 
 }

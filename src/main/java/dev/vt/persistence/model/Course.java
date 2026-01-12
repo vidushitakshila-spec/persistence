@@ -9,12 +9,15 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
-public class Course {
+public class Course extends  AuditableEntity{
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
   private Long id;
-
-  private String name;
+  private String name;          // "BSc Computer Science"
+  private int durationYears;    // 3
+  private String degreeType;    // BSc / MSc / Diploma
 
 }
+
+

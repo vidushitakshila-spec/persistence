@@ -1,6 +1,5 @@
 package dev.vt.persistence.model;
 
-import dev.vt.persistence.model.enums.Specialization;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,11 +13,15 @@ import java.time.LocalDate;
 @Data
 public class Employee extends Person{
 
-
+    @Column(nullable = false)
     private LocalDate dateOfJoining;
 
     @ManyToOne
+    @JoinColumn(name ="department_id")
     private Department department;
+
+    @Column(nullable = false)
+    private Double salary;
 
 
 }

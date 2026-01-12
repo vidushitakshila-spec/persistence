@@ -1,6 +1,6 @@
 package dev.vt.persistence.model;
 
-import dev.vt.persistence.Phone;
+import dev.vt.persistence.model.enums.DepartmentType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,18 +14,16 @@ import java.util.List;
 @Data
 public class Department extends  AuditableEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
+    @Enumerated(EnumType.STRING)
     @Column(name = "name", nullable = false)
-    private String name;
+    private DepartmentType department;
 
-    @OneToMany
-    @Column(name = "employee", nullable = false)
-    @JoinColumn(name = "employee_id")
-    private List<Employee> employee;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name= "contact_id", nullable = false)
+    private Contact contact;
+
+    @OneToMany(mappedBy = "department")
+    private List<Employee> employees;
 
 /*    @OneToOne
     @Column(name = "hod", nullable = false)

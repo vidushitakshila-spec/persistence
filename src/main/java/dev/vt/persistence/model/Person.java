@@ -1,10 +1,7 @@
 package dev.vt.persistence.model;
 
 import dev.vt.persistence.model.enums.Gender;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Person extends AuditableEntity {
 
   private String fullName;
@@ -24,5 +22,7 @@ public class Person extends AuditableEntity {
 
   private LocalDate dob;
 
-  @OneToOne private Contact contact;
+  @OneToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name= "contact_id", nullable = false)
+  private Contact contact;
 }

@@ -8,27 +8,29 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @MappedSuperclass // Required for inheritance
-@EntityListeners(AuditingEntityListener.class) // Enables automatic auditing
+@EntityListeners(AuditingEntityListener.class) // Enables automatic JPA auditing
 public abstract class AuditableEntity extends BaseEntity{
 
     @CreatedBy
-    @Column(name = "created_by")
-    private String createdBy;
+    @Column(name = "created_by" )
+    private String createdBy = "tvidushi";
 
     @CreatedDate
     @Column(name = "created_date", nullable = false, updatable = false)
-    private LocalDateTime createdDate;
+    private Instant createdDate = Instant.now();
 
     @LastModifiedBy
     @Column(name = "last_modified_by")
-    private String lastModifiedBy;
+    private String lastModifiedBy = "tvidushi";
 
     @LastModifiedDate
     @Column(name = "last_modified_date")
-    private LocalDateTime lastModifiedDate;
+    private Instant lastModifiedDate = Instant.now();;
 }
