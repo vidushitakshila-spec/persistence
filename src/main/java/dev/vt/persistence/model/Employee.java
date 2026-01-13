@@ -16,7 +16,7 @@ public class Employee extends Person{
     @Column(nullable = false)
     private LocalDate dateOfJoining;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name ="department_id")
     private Department department;
 

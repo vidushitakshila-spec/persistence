@@ -8,9 +8,21 @@ INSERT INTO address (firstline, secondline, state, zip) VALUES ('159 Maple Drive
 INSERT INTO address (firstline, secondline, state, zip) VALUES ('753 Birch Street', NULL, 'AZ', '85001');
 INSERT INTO address (firstline, secondline, state, zip) VALUES ('852 Spruce Court', 'Apt 9C', 'MA', '02108');
 INSERT INTO address (firstline, secondline, state, zip) VALUES ('951 Walnut Way', NULL, 'CO', '80201');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('323 Parker St', 'Apt 4B', 'CA', '94105');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('456 South Bay Street', NULL, 'NY', '10001');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('1789 Sugar Land Road', 'Suite 210', 'TX', '73301');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('1322 First Avenue', NULL, 'FL', '33101');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('1654 Wine Lane', 'Floor 3', 'IL', '60601');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('2987 Cheddar Blvd', NULL, 'WA', '98101');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('159 Saple Drive', 'Unit 12', 'NJ', '07097');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('853 Birch Street', NULL, 'AZ', '85001');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('452 Spruce Court', 'Apt 9C', 'MA', '02108');
+INSERT INTO address (firstline, secondline, state, zip) VALUES ('751 Walnut Way', NULL, 'CO', '80201');
+---
 
 INSERT INTO contact (id, phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
-  VALUES ( Gen_random_uuid(), '+1-415-555-1001', 'john.doe@example.com', (SELECT id FROM address WHERE firstline = '123 Main St' AND zip = '94105'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM');
+  VALUES ( Gen_random_uuid(), '+1-415-555-1001', 'john.doe@example.com', (SELECT id FROM address WHERE firstline = '123 Main St' AND zip = '94105'),
+  CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM');
 INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
    VALUES ( Gen_random_uuid(), '+1-212-555-2034', 'jane.smith@example.com', (SELECT id FROM address WHERE firstline = '456 Market Street' AND zip = '10001'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
 INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
@@ -29,6 +41,37 @@ INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last
 VALUES ( Gen_random_uuid(), '+1-617-555-7788', 'kevin.anderson@example.com', (SELECT id FROM address WHERE firstline = '852 Spruce Court' AND zip = '02108'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
 INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
 VALUES ( Gen_random_uuid(), '+1-303-555-5566', 'amy.clark@example.com', (SELECT id FROM address WHERE firstline = '951 Walnut Way' AND zip = '80201'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO contact (id, phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+  VALUES ( Gen_random_uuid(), '+1-415-565-1001', 'amit.sharma@org.com', (SELECT id FROM address WHERE firstline =
+  '323 Parker St' AND zip = '94105'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM');
+INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+   VALUES ( Gen_random_uuid(), '+1-212-555-2034', 'neha.verma@org.com', (SELECT id FROM address WHERE firstline =
+    '456 South Bay Street' AND zip = '10001'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+   VALUES ( Gen_random_uuid(), '+1-512-655-8899', 'rahul.mehta@org.com', (SELECT id FROM address WHERE firstline
+    = '1789 Sugar Land Road' AND zip = '73301'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+VALUES ( Gen_random_uuid(), '+1-305-755-7788', 'priya.nair@org.com', (SELECT id FROM address WHERE firstline =
+'1322 First Avenue' AND zip = '33101'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+    INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+    VALUES ( Gen_random_uuid(), '+1-312-755-4455', 'suresh.kumar@org.com', (SELECT id FROM address WHERE
+    firstline = '1654 Wine Lane' AND zip = '60601'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+VALUES ( Gen_random_uuid(), '+1-206-585-9988', 'anita.desai@org.com', (SELECT id FROM address WHERE firstline =
+'2987 Cheddar Blvd' AND zip = '98101'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+VALUES ( Gen_random_uuid(), '+1-609-955-3322', 'vikram.singh@org.com', (SELECT id FROM address WHERE firstline =
+'159 Saple Drive' AND zip = '07097'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+VALUES ( Gen_random_uuid(), '+1-602-455-4455', 'arjun.rao@org.com', (SELECT id FROM address WHERE firstline =
+'853 Birch Street' AND zip = '85001'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+VALUES ( Gen_random_uuid(), '+1-617-559-7788', 'pooja.malhotra@org.com', (SELECT id FROM address WHERE firstline
+= '452 Spruce Court' AND zip = '02108'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+INSERT INTO contact (id,phone, email, address_id, created_date, created_by, last_modified_date, last_modified_by)
+VALUES ( Gen_random_uuid(), '+1-303-551-5566','kavita.joshi@org.com', (SELECT id FROM address WHERE firstline =
+'751 Walnut Way' AND zip = '80201'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
 
 INSERT INTO department (id, name, contact_id,created_date, created_by, last_modified_date, last_modified_by)
 VALUES (Gen_random_uuid(), 'FACULTY', (SELECT id FROM contact WHERE email ='kevin.anderson@example.com'),CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM');
@@ -157,6 +200,69 @@ VALUES (gen_random_uuid(),5, (SELECT id FROM course WHERE name = 'BS Artificial 
 INSERT INTO semester (id, semester_number, course_id,created_date, created_by, last_modified_date, last_modified_by)
 VALUES (gen_random_uuid(), 6, (SELECT id FROM course WHERE name = 'BS Artificial Intelligence'),
         CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM');
+
+
+INSERT INTO semester_subject ( id, subject, credits, semester_id, created_date,created_by,
+last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'ARTIFICIAL_INTELLIGENCE', 4, ( SELECT s.id FROM semester s JOIN course c ON c.id = s
+.course_id WHERE s.semester_number = 1 AND c.name = 'BS Artificial Intelligence' )
+, CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO semester_subject ( id, subject, credits, semester_id, created_date,created_by,
+last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'DATA_STRUCTURES', 4,  ( SELECT s.id FROM semester s JOIN course c ON c.id = s.course_id WHERE s.semester_number = 1 AND c.name = 'MS Computer Science' )
+, CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO semester_subject ( id, subject, credits, semester_id, created_date,created_by,
+last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'DATA_STRUCTURES', 4, ( SELECT s.id FROM semester s JOIN course c ON c.id = s
+.course_id WHERE s.semester_number = 2 AND c.name = 'BS Computer Science' )
+, CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+VALUES( gen_random_uuid(), 'Amit Sharma', 'MALE' ,'1992-03-15', (SELECT id FROM contact WHERE email = 'amit.sharma@org.com'),
+CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+VALUES
+(gen_random_uuid(), 'Neha Verma', 'FEMALE', '1994-07-22', (SELECT id FROM contact WHERE email = 'neha.verma@org.com'), CURRENT_TIMESTAMP,
+'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+
+VALUES ( gen_random_uuid(), 'Rahul Mehta', 'MALE', DATE '1990-11-05', (SELECT id FROM contact WHERE email = 'rahul.mehta@org.com'),
+CURRENT_TIMESTAMP,
+'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Priya Nair', 'FEMALE', DATE '1993-01-30', (SELECT id FROM contact WHERE email = 'priya.nair@org.com'), CURRENT_TIMESTAMP,
+ 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Suresh Kumar', 'MALE', DATE '1988-09-12', (SELECT id FROM contact WHERE email = 'suresh.kumar@org.com'),
+CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Anita Desai', 'FEMALE', DATE '1991-05-09', (SELECT id FROM contact WHERE email = 'anita.desai@org.com'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+VALUES( gen_random_uuid(), 'Vikram Singh', 'MALE', DATE '1989-02-17', (SELECT id FROM contact WHERE email = 'vikram.singh@org.com'),CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP,
+'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Pooja Malhotra', 'FEMALE', DATE '1995-12-08', (SELECT id FROM contact WHERE email =
+'pooja.malhotra@org.com'),
+CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+VALUES
+ (gen_random_uuid(), 'Arjun Rao', 'MALE', DATE '1992-06-25', (SELECT id FROM contact WHERE email = 'arjun.rao@org.com'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO person ( id, full_name, gender, dob, contact_id, created_date, created_by, last_modified_date, last_modified_by )
+VALUES
+ (gen_random_uuid(), 'Kavita Joshi', 'FEMALE', DATE '1990-10-03', (SELECT id FROM contact WHERE email = 'kavita.joshi@org.com'), CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+
         
         
 

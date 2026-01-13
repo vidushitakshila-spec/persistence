@@ -6,24 +6,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-
 @Entity
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
 public class SemesterSubject extends AuditableEntity {
 
-
-
   @Enumerated(EnumType.STRING)
+  @Column(name = "subject")
   private Subject subject;
 
+  @Column(name = "credits")
   private int credits;
-  private boolean mandatory;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "semester_id", nullable = false)
   private Semester semester;
-
-
 }

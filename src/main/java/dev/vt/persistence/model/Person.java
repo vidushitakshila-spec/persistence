@@ -12,17 +12,20 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Data
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Person extends AuditableEntity {
 
+  @Column(name ="full_name")
   private String fullName;
 
   @Enumerated(EnumType.STRING)
+  @Column(name ="gender")
   private Gender gender;
 
+  @Column(name ="dob")
   private LocalDate dob;
 
   @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name= "contact_id", nullable = false)
+  @JoinColumn(name= "contact_id")
   private Contact contact;
 }

@@ -32,7 +32,7 @@ public class Semester extends AuditableEntity {
   private List<SemesterSubject> semesterSubjects = new ArrayList<>();
 
 
-  public void addSubject(Subject subject) {
+/*  public void addSubject(Subject subject) {
     SemesterSubject ss = new SemesterSubject();
     ss.setSubject(subject);
     ss.setSemester(this);
@@ -41,5 +41,5 @@ public class Semester extends AuditableEntity {
 
   public void removeSubject(Subject subject) {
     semesterSubjects.removeIf(ss -> ss.getSubject() == subject);
-  }
+  }*/
 }

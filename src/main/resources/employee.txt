@@ -1,0 +1,55 @@
+INSERT INTO employee ( (Select id from), full_name, gender, dob, contact_id, date_of_joining, department_id, salary,
+created_date, created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Amit Sharma', 'MALE' ,'1992-03-15', (SELECT id FROM contact WHERE email = 'amit
+.sharma@org.com'), '2020-01-10', (SELECT id FROM department WHERE department = 'ADMIN'), 55000,
+CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO employee ( id, full_name, gender, dob, contact_id, date_of_joining, department_id, salary, created_date, created_by, last_modified_date, last_modified_by )
+VALUES
+(gen_random_uuid(), 'Neha Verma', 'FEMALE', DATE '1994-07-22', (SELECT id FROM contact WHERE email = 'neha.verma@org
+.com'), DATE '2021-02-18', (SELECT id FROM department WHERE department = 'OPERATIONS'), 52000, CURRENT_TIMESTAMP,
+'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO employee ( id,  date_of_joining, department_id, salary, created_date, created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Rahul Mehta', 'MALE', DATE ,'1990-11-05', (SELECT id FROM contact WHERE email = 'rahul
+.mehta@org.com'), DATE '2019-06-01', (SELECT id FROM department WHERE department = 'OPERATIONS'), 65000,
+CURRENT_TIMESTAMP,
+'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO employee ( id, , department_id, salary, created_date, created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Priya Nair', 'FEMALE', DATE ,'1993-01-30', (SELECT id FROM contact WHERE email = 'priya
+.nair@org.com'), DATE '2022-04-11', (SELECT id FROM department WHERE department = 'ADMIN'), 48000, CURRENT_TIMESTAMP,
+ 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO employee ( id, full_name, gender, dob, contact_id, date_of_joining, department_id, salary, created_date, created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Suresh Kumar', 'MALE', DATE ,'1988-09-12', (SELECT id FROM contact WHERE email = 'suresh
+.kumar@org.com'), DATE '2018-08-20', (SELECT id FROM department WHERE department = 'ADMIN'), 72000,
+CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO employee ( id, full_name, gender, dob, contact_id, date_of_joining, department_id, salary, created_date,
+created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Anita Desai', 'FEMALE', DATE '1991-05-09', (SELECT id FROM contact WHERE email = 'anita.desai@org.com'), DATE '2020-11-02', (SELECT id FROM department WHERE department = 'ADMIN'),
+60000, CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO employee ( id, full_name, gender, dob, contact_id, date_of_joining, department_id, salary, created_date, created_by, last_modified_date, last_modified_by )
+VALUES ( gen_random_uuid(), 'Vikram Singh', 'MALE', DATE '1989-02-17', (SELECT id FROM contact WHERE email = 'vikram.singh@org.com'), DATE '2017-03-14',
+(SELECT id FROM department WHERE department = 'ADMIN'), 75000, CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP,
+'SYSTEM' );
+
+ INSERT INTO employee ( id, full_name, gender, dob, contact_id, date_of_joining, department_id, salary, created_date, created_by, last_modified_date, last_modified_by )
+
+VALUES ( gen_random_uuid(), 'Pooja Malhotra', 'FEMALE', DATE '1995-12-08', (SELECT id FROM contact WHERE email =
+'pooja.malhotra@org.com'), DATE '2023-01-09', (SELECT id FROM department WHERE department = 'ADMIN'), 45000,
+CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+ INSERT INTO employee ( id, full_name, gender, dob, contact_id, date_of_joining, department_id, salary, created_date, created_by, last_modified_date, last_modified_by )
+
+VALUES
+ (gen_random_uuid(), 'Arjun Rao', 'MALE', DATE '1992-06-25', (SELECT id FROM contact WHERE email = 'arjun.rao@org.com'), DATE '2019-09-16', (SELECT id FROM department WHERE department = 'ADMIN'),
+ 68000, CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
+
+INSERT INTO employee ( id, full_name, gender, dob, contact_id, date_of_joining, department_id, salary, created_date, created_by, last_modified_date, last_modified_by )
+
+VALUES
+ (gen_random_uuid(), 'Kavita Joshi', 'FEMALE', DATE '1990-10-03', (SELECT id FROM contact WHERE email = 'kavita.joshi@org.com'), DATE '2018-12-05',
+ (SELECT id FROM department WHERE department = 'ADMIN'), 70000, CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM' );
