@@ -1,16 +1,16 @@
 package dev.vt.persistence.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.Instant;
 
 @Entity
-@AllArgsConstructor
-@RequiredArgsConstructor
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class AssignmentFile {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

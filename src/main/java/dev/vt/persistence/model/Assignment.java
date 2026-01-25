@@ -2,17 +2,17 @@ package dev.vt.persistence.model;
 
 import dev.vt.persistence.model.enums.Subject;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 
 import java.time.LocalDate;
 
 @Entity
-@AllArgsConstructor
-@RequiredArgsConstructor
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Assignment extends AuditableEntity{
 
   private String title;

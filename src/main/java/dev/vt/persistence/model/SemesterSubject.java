@@ -2,14 +2,14 @@ package dev.vt.persistence.model;
 
 import dev.vt.persistence.model.enums.Subject;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
-@AllArgsConstructor
-@RequiredArgsConstructor
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class SemesterSubject extends AuditableEntity {
 
   @Enumerated(EnumType.STRING)

@@ -2,16 +2,16 @@ package dev.vt.persistence.model;
 
 import dev.vt.persistence.model.enums.DepartmentType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
 @Entity
-@AllArgsConstructor
-@RequiredArgsConstructor
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Department extends  AuditableEntity{
 
     @Enumerated(EnumType.STRING)

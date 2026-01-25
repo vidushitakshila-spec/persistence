@@ -3,9 +3,8 @@ package dev.vt.persistence.model;
 import dev.vt.persistence.model.enums.SemesterType;
 import dev.vt.persistence.model.enums.Subject;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +14,10 @@ import java.util.Set;
 @Table(
     name = "semester",
     uniqueConstraints = {@UniqueConstraint(columnNames = {"course_id", "semester_number"})})
-@AllArgsConstructor
-@RequiredArgsConstructor
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Semester extends AuditableEntity {
 
   @Column(name = "semester_number", nullable = false)

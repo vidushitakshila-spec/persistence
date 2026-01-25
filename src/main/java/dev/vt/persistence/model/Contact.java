@@ -1,15 +1,17 @@
 package dev.vt.persistence.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Entity
-@AllArgsConstructor
-@RequiredArgsConstructor
 @Data
-public class Contact extends AuditableEntity{
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Contact extends  AuditableEntity{
+
+
 
   @Embedded
   private Phone phone;

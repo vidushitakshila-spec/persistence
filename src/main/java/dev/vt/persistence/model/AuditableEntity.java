@@ -1,8 +1,8 @@
 package dev.vt.persistence.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -15,7 +15,10 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @MappedSuperclass // Required for inheritance
-@EntityListeners(AuditingEntityListener.class) // Enables automatic JPA auditing
+@EntityListeners(AuditingEntityListener.class)
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class AuditableEntity extends BaseEntity{
 
     @CreatedBy
