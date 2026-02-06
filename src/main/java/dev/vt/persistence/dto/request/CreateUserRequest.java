@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public record UserRegistrationRequest(
+public record CreateUserRequest(
 
         @Size(min = 4, max = 100)
         String title,
@@ -35,7 +35,8 @@ public record UserRegistrationRequest(
 
         @NotBlank(message = "Institution Id is required")
         @Size(min = 10, max = 250)
-        String institutionId,
+        @Email(message = "Email must be a well-formed email address")
+         String email,
 
         @NotBlank
         @Pattern(
@@ -76,7 +77,7 @@ public record UserRegistrationRequest(
         private static final LocalDate DEFAULT_DOL = LocalDate.of(9999, 12, 31);
 
         /** Canonical constructor */
-        public UserRegistrationRequest {
+        public CreateUserRequest {
                 // Default active flag
                 active = active;
 
@@ -86,26 +87,25 @@ public record UserRegistrationRequest(
                 }
         }
 
-        /** Optional factory method */
-        public static UserRegistrationRequest createWithDefaults(
+        public static CreateUserRequest createWithDefaults(
                 String title,
                 String firstname,
                 String middlename,
                 String lastname,
                 String fullName,
-                String institutionId,
+                String email,
                 String role,
                 String gender,
                 LocalDate dob,
                 LocalDate doj,
                 ContactDto contact) {
-                return new UserRegistrationRequest(
+                return new CreateUserRequest(
                         title,
                         firstname,
                         middlename,
                         lastname,
                         buildFullName(title,firstname,middlename,lastname),
-                        institutionId,
+                        email,
                         Role.valueOf(role.toUpperCase()),
                         Gender.valueOf(gender.toUpperCase()),
                         dob,
